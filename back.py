@@ -4,7 +4,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)  # Habilitar CORS para todos os endpoints
 
-# Lista para armazenar os dados
+# Lista para armazenar os dados da probabilidade simples
 data_list = []
 # Contador para IDs sequenciais
 id_counter = 1
@@ -18,17 +18,17 @@ def process_data():
     fav = float(data.get('fav'))
     pos = float(data.get('pos'))
     
-    # Calcular o resultado
-    res = fav / pos
+    # Calcular o resultado da probabilidade simples
+    res_simple = fav / pos
     
-    # Adicionar um ID sequencial ao objeto JSON
+    # Adicionar um ID sequencial ao objeto JSON da probabilidade simples
     data['id'] = id_counter
-    data['res'] = res
+    data['res_simple'] = res_simple
     
     # Incrementar o contador de IDs
     id_counter += 1
     
-    # Adicionar os dados à lista
+    # Adicionar os dados à lista correspondente
     data_list.append(data)
     
     return jsonify(data)

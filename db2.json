@@ -1,0 +1,25 @@
+{
+  "data2": [
+    {
+      "id": "25dd",
+      "probA": "20",
+      "probB": "20",
+      "probAB": "20",
+      "resultado": 1
+    },
+    {
+      "id": "9416",
+      "probA": "5",
+      "probB": "5",
+      "probAB": "5",
+      "resultado": 1
+    },
+    {
+      "id": "759a",
+      "probA": "5",
+      "probB": "5",
+      "probAB": "5",
+      "resultado": 1
+    }
+  ]
+}
