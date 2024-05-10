@@ -34,14 +34,15 @@
                                     name="pos" [(ngModel)]="pos">
                             </div>
                             <div class="input-group">
-                                <!-- Usando um elemento <label> para mostrar o resultado -->
                                 <label class="input--style-1">Resultado: {{ res }}</label>
-                                <!-- Ou você pode usar um elemento <span> se preferir -->
-                                <!-- <span class="input--style-1">Resultado: {{ res }}</span> -->
+                            </div>
+                            <div class="input-group">
+                                <label class="input--style-1">Resultado em porcentagem: {{ res !== undefined ? (res * 100).toFixed(2) : '' }}%</label>
                             </div>
                             <div class="p-t-20">
-                                <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                                <button class="btn btn--radius btn--green" type="submit">Enviar</button>
                             </div>
+                            
                         </form>
                     </div>
                 </div>
@@ -58,6 +59,7 @@
                                         <th scope="col">Favoráveis</th>
                                         <th scope="col">Possíveis</th>
                                         <th scope="col">Resultado</th>
+                                        <th scope="col">Resultado em %</th> <!-- Nova coluna para Resultado em porcentagem -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -66,6 +68,7 @@
                                         <td>{{ item.fav }}</td>
                                         <td>{{ item.pos }}</td>
                                         <td>{{ item.res }}</td>
+                                        <td>{{ item.res !== undefined ? (item.res * 100).toFixed(2) : '' }}%</td> <!-- Resultado em porcentagem com duas casas decimais -->
                                     </tr>
                                 </tbody>
                             </table>

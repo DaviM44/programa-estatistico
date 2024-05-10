@@ -8,9 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TelainicialComponent implements OnInit {
 
-  fav: string | undefined;
-  pos: string | undefined;
-  res: string | undefined;
+  fav: number | undefined;
+  pos: number | undefined;
+  res: number | undefined;
   jsonData: any[] = []; // Variável para armazenar os dados do JSON
 
   constructor(private http: HttpClient) {}

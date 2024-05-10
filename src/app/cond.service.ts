@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Data } from './data';
+import { Cond } from './cond';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class CondService {
 
-  url = "http://localhost:3000/data";
+  url = "http://localhost:3001/cond";
 
   constructor(private http: HttpClient) { }
 
-  save(data: Data) : Observable<Data> {
-    return this.http.post<Data>(this.url, data)
+  save(cond: Cond) : Observable<Cond> {
+    return this.http.post<Cond>(this.url, cond)
   }
   
   getCurso(): Observable<any[]> {

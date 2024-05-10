@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Main CSS-->
+    <link href="condicionado.component.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo" id="cima">
+        <div class="row">
+<div class="wrapper wrapper--w680">
+    <div class="card card-1">
+        <div class="card-heading"></div>
+        <div class="card-body">
+            <h2 class="title">Probabilidade</h2>
+            <form (ngSubmit)="submitForm()">
+                <div class="input-group">
+                    <input class="input--style-1" type="text" placeholder="Número de Resultados favoráveis para A"
+                        name="fav" [(ngModel)]="favA">
+                </div>
+                <div class="input-group">
+                    <input class="input--style-1" type="text" placeholder="Número de Resultados possíveis para A"
+                        name="pos" [(ngModel)]="posA">
+                </div>
+                <div class="input-group">
+                    <input class="input--style-1" type="text" placeholder="Número de Resultados favoráveis para B"
+                        name="fav" [(ngModel)]="favB">
+                </div>
+                <div class="input-group">
+                    <input class="input--style-1" type="text" placeholder="Número de Resultados possíveis para B"
+                        name="pos" [(ngModel)]="posB">
+                </div>
+                <div class="input-group">
+                    <label class="input--style-1">Resultado: {{ res }}</label>
+                </div>
+                <div class="p-t-20">
+                    <button class="btn btn--radius btn--green" type="submit">Enviar</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper--w680 mt-5" *ngIf="condDataList.length > 0" id="baixo">
+    <div class="card card-1 fade-in">
+      <div class="card-body">
+        <div class="container">
+          <h2>Dados de Probabilidade Condicional</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Operação</th>
+                <th scope="col">Fav. para A</th>
+                <th scope="col">Poss. para A</th>
+                <th scope="col">Fav. para B</th>
+                <th scope="col">Poss. para B</th>
+                <th scope="col">Resultado</th>
+                <th scope="col">Resultado em %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of condDataList">
+                <td>{{ item.id }}</td>
+                <td>{{ item.favA }}</td>
+                <td>{{ item.posA }}</td>
+                <td>{{ item.favB }}</td>
+                <td>{{ item.posB }}</td>
+                <td>{{ item.res.toFixed(2) }}</td> <!-- Exibir res com duas casas decimais -->
+                <td>{{ item.res !== undefined ? (item.res * 100).toFixed(2) : '' }}%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
